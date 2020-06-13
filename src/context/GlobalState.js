@@ -65,7 +65,6 @@ export const GlobalProvider = ({ children }) => {
   };
 
   function updateRandomSmurfs(finalarray) {
-    console.log("updateRandomSmurfs", finalarray);
     dispatch({
       type: "SHUFFLE_SMURFS",
       payload: finalarray,
@@ -80,7 +79,6 @@ export const GlobalProvider = ({ children }) => {
   }
 
   function resetOpenSmurfs() {
-    console.log("addToOpenSmurfs");
     dispatch({
       type: "RESET_OPEN_SMURFS",
       payload: [],

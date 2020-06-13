@@ -19,26 +19,22 @@ function App() {
   } = useContext(GlobalContext);
 
   const checkSmurfs = (smurf) => {
-    console.log("checkSmurfs-begin", openCount);
     if (openCount === 1) {
       let randomSmurfsNew = randomSmurfs;
       if (
         openSmurfs[0].name === smurf.name &&
         openSmurfs[0].index !== smurf.index
       ) {
-        console.log("complete");
         randomSmurfsNew[openSmurfs[0].index].complete = true;
         randomSmurfsNew[smurf.index].complete = true;
         setOpenCount(0);
       } else {
-        console.log("close");
         randomSmurfsNew[openSmurfs[0].index].close = true;
         randomSmurfsNew[smurf.index].close = true;
         setOpenCount(0);
       }
       updateRandomSmurfs(randomSmurfsNew);
       resetOpenSmurfs([{ name: smurf.name, index: smurf.index }]);
-      console.log("checkSmurfs-end", openCount);
     }
   };
 
